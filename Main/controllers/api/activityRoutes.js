@@ -1,7 +1,19 @@
 const router = require('express').Router();
-const { saved_activity, user } = require('../../models');
+const { saved_activity } = require('../../models');
 
-// GET all products
+router.get('/activities', async (req, res) => {
+  try {
+    const activities = await saved_activity.findAll();
+    res.status(200).json(activities);
+  } catch (error) {
+    console.error('Error retrieving activities:', error);
+    res.status(500).json({ message: 'Failed to retrieve activities' });
+  }
+});
+
+module.exports = router;
+
+// GET all activities
 router.get('/', async (req, res) => {
   try {
     const activities = await saved_activity.findAll({
@@ -12,21 +24,6 @@ router.get('/', async (req, res) => {
     res.status(500).json({ message: 'Failed to retrieve activities', error: err });
   }
 });
-
-
-
-// GET all products
-router.get('/', async (req, res) => {
-    try {
-      const activities = await saved_activity.findAll({
-        include: [{ model: user }],
-      });
-      res.status(200).json(activities);
-    } catch (err) {
-      res.status(500).json({ message: 'Failed to retrieve activities', error: err });
-    }
-  });
-  
 
 // GET all activities for a specific user id
 router.get('/:user_id', async (req, res) => {
