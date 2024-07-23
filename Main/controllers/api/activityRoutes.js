@@ -1,18 +1,6 @@
 const router = require('express').Router();
 const { saved_activity } = require('../../models');
 
-router.get('/activities', async (req, res) => {
-  try {
-    const activities = await saved_activity.findAll();
-    res.status(200).json(activities);
-  } catch (error) {
-    console.error('Error retrieving activities:', error);
-    res.status(500).json({ message: 'Failed to retrieve activities' });
-  }
-});
-
-module.exports = router;
-
 // GET all activities
 router.get('/', async (req, res) => {
   try {
@@ -39,7 +27,7 @@ router.get('/:user_id', async (req, res) => {
 
     res.status(200).json(userActivities);
   } catch (err) {
-    res.status(500).json({ message: 'Failed to retrieve activities', error: err });
+    res.status(500).json({ message: 'Failed to retrieve userr activities', error: err });
   }
 });
 
@@ -58,13 +46,12 @@ router.get('/:user_id/:park_name', async (req, res) => {
 
     res.status(200).json(userParkActivities);
   } catch (err) {
-    res.status(500).json({ message: 'Failed to retrieve activities', error: err });
+    res.status(500).json({ message: 'Failed to retrieve user activities', error: err });
   }
 });
 
 
 // POST a new saved activity by user
-
 router.post('/', async (req, res) => {
     try {
       const newSavedActivity = await saved_activity.create(req.body);
@@ -75,9 +62,8 @@ router.post('/', async (req, res) => {
     }  
   });
 
-// PUT update a saved activity by id
 
-//
+// PUT update a saved activity by id
 router.put('/:id', async (req, res) => {
     const id = req.params.userId;
     const updatedActivityData = req.body; // Assuming req.body contains updated activity data

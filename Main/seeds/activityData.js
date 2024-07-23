@@ -20,17 +20,17 @@ const activityData = [
   {
     "user_id": "3",
     "park_name": "Adams National Historical Park",
-    "activity": "Fishing",
-    "activity_description": "",
-    "activity_photo": "https://www.nps.gov/common/uploads/structured_data/8942542D-B88C-8E75-525D5D8E60126209.jpg",
-    "activity_url": "https://www.nps.gov/adam/planyourvisit/{{activity_name}}.htm"
+    "activity": "Hike the La Jara Trail",
+    "activity_description": "This 1.5-mile (2.4 km) hiking loop circles Cerro La Jara, the smallest volcanic dome in the park, which formed about 500,000 years ago when lava oozed up and onto the caldera floor.",
+    "activity_photo": "https://www.nps.gov/common/uploads/cropped_image/DB3ADD73-BFFF-4DB7-48F7A11555D60B07.jpg",
+    "activity_url": "https://www.nps.gov/thingstodo/hike-the-la-jara-trail.htm"
   },
   {
     "user_id": "1",
     "park_name": "Aniakchak National Monument & Preserve",
-    "activity": "Self-Guided Tours - Walking",
-    "activity_description": "",
-    "activity_photo": "",
+    "activity": "Self-Join a Ranger Program at Reconstruction Era National Historical Park",
+    "activity_description": "Join a ranger for a program at any of our three sites: Downtown Beaufort, Darrah Hall, or Pinckney-Porter’s Chapel. Program time and days vary at each site; check our calendar to find out what’s happening.",
+    "activity_photo": "https://www.nps.gov/common/uploads/cropped_image/EFFBD5F2-B6A4-DBEE-BAFE2F151B83DBCC.jpg",
     "activity_url": "https://www.nps.gov/ania/planyourvisit/{{activity_name}}.htm"
   },
   {
@@ -39,7 +39,7 @@ const activityData = [
     "activity": "Day Trip or Backpack Hike to Coyote Gulch",
     "activity_description": "Open year-round but most popular in Spring and Fall, Coyote Gulch is a tributary of the Escalante River with several entry points for day hiking or backpacking in the Escalante Canyons of Glen Canyon National Recreation Area and Grand Staircase National Monument. This is a wilderness area, prepare to pack out everything you bring in.",
     "activity_photo": "https://www.nps.gov/common/uploads/cropped_image/A1A3EA69-E3C6-20EF-905E6674746654B8.jpg",
-    "activity_url": "https://www.nps.gov/thingstodo/day-trip-or-backpack-hike-to-coyote-gulch.htm"
+    "activity_url": "https://www.nps.gov/thingstodo/join-a-ranger-program-at-reconstruction-era-national-historical-park.htm"
   },
   {
     "user_id": "3",
