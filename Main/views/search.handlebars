@@ -1,0 +1,19 @@
+<div id="search-container">
+  <form action="/search" method="get">
+    <input type="text" name="parkName" id="search-bar" placeholder="Search for a National Park..." value="{{parkName}}">
+    <button type="submit" id="search-button">Search</button>
+  </form>
+</div>
+
+    {{#if activities}}
+        <h2>Activities in {{parkName}}</h2>
+        <ul>
+            {{#each activities}}
+                <li>{{this}}</li>
+            {{/each}}
+        </ul>
+    {{/if}}
+
+    {{#if error}}
+        <p>{{error}}</p>
+    {{/if}}
