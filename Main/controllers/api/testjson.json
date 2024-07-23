@@ -1,0 +1,22 @@
+[
+{
+    "user_id": "3",
+    "park_name": "Valles Caldera National Preserve",
+    "activity": "Hiking La Jara Trail",
+    "activity_description": "This 1.5-mile (2.4 km) hiking loop circles Cerro La Jara, the smallest volcanic dome in the park, which formed about 500,000 years ago when lava oozed up and onto the caldera floor",
+    "activity_photo": "https://www.nps.gov/common/uploads/cropped_image/DB3ADD73-BFFF-4DB7-48F7A11555D60B07.jpg",
+    "activity_url": "https://www.nps.gov/thingstodo/hike-the-la-jara-trail.htm"
+  }
+
+,
+{
+    "user_id": "1",
+    "park_name": "Lassen Volcanic National Park",
+    "activity": "Bumpass Hell Trail and Basin",
+    "activity_description": "The Bumpass Hell Trail is one of the most popular trails in the park. From the trailhead, the first mile is mostly flat and traverses the northeast slope of Bumpass Mountain with views of Little Hot Springs Valley and numerous volcanic peaks. An overlook at about 0.5 mile provides a panoramic view of the five remnant peaks of the ancestral Brokeoff Volcano. At about one mile, an overlook provides a view into the Bumpass Hell basin. From here, the trail drops 300 feet into the basin where a boardwalk provides an up-close view of the hydrothermal features. A second trail skirts the northern edge of the basin and continues up the eastern edge of the basin to a second overlook, which provides an additional view of the basin. Most hikers stop here and return the way they came to the Bumpass Hell Trailhead.",
+    "activity_photo": "https://www.nps.gov/common/uploads/cropped_image/AF2554D6-E2E8-061C-B230DA644291DFB9.jpg",
+    "activity_url": "https://www.nps.gov/thingstodo/hikebumpasshell.htm"
+  }
+
+]
+
