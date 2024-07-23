@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { saved_activity } = require('../../models');
+const fetch = require('node-fetch');
 
 router.get('/activities', async (req, res) => {
   try {
@@ -118,4 +119,29 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
+// Route to handle the search request -- needs to be debugged
+router.get('/search', async (req, res) => {
+  const parkName = req.body.parkName;
+
+  // Fetch activities for the park
+  const apiEndpoint = `https://developer.nps.gov/api/v1/thingstodo?q=${parkName}&api_key=${API_KEY}`;
+
+  try {
+    const response = await fetch(apiEndpoint);
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    const data = await response.json();
+    // console.log('API Response:', data); // Log the response data
+    
+    const activities = data.data ? data.data.map(activity => activity.name) : [];
+    
+    res.render('search', { activities, parkName });
+  } catch (error) {
+    console.error('Error fetching park activities:', error);
+    res.render('search', { error: 'Unable to fetch activities. Please try again later.' });
+  }
+});
 module.exports = router;
