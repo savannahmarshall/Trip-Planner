@@ -1,47 +1,81 @@
-const newFormHandler = async (event) => {
-  event.preventDefault();
+// public/profile.js
 
-  const name = document.querySelector('#project-name').value.trim();
-  const needed_funding = document.querySelector('#project-funding').value.trim();
-  const description = document.querySelector('#project-desc').value.trim();
-
-  if (name && needed_funding && description) {
-    const response = await fetch(`/api/projects`, {
-      method: 'POST',
-      body: JSON.stringify({ name, needed_funding, description }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
+// Function to fetch and display saved activities
+const fetchActivities = async () => {
+  try {
+    // Fetch activities for the logged-in user
+    const response = await fetch('/api/activities', {
+      method: 'GET',
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+      const activities = await response.json();
+      const activityList = document.querySelector('.activity-list');
+
+      // Clear any existing activities
+      activityList.innerHTML = '';
+
+      // Populate the activity list
+      activities.forEach((activity) => {
+        const activityItem = document.createElement('li');
+        activityItem.classList.add('activity-item');
+        activityItem.innerHTML = `
+          <span>${activity.name}</span>
+          <span>${activity.description}</span>
+          <span>Funding Needed: $${activity.needed_funding}</span>
+          <button data-id="${activity.id}" class="delete-activity-btn">Delete</button>
+        `;
+        activityList.appendChild(activityItem);
+      });
+
     } else {
-      alert('Failed to create project');
+      throw new Error('Failed to fetch activities');
     }
+  } catch (error) {
+    alert(error.message);
   }
 };
 
+// Handler for deleting an activity
 const delButtonHandler = async (event) => {
-  if (event.target.hasAttribute('data-id')) {
+  if (event.target.classList.contains('delete-activity-btn')) {
     const id = event.target.getAttribute('data-id');
 
-    const response = await fetch(`/api/projects/${id}`, {
+    const response = await fetch(`/api/users/activities/${id}`, {
       method: 'DELETE',
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+      fetchActivities();  // Refresh the activity list
     } else {
-      alert('Failed to delete project');
+      alert('Failed to delete activity');
     }
   }
 };
 
-document
-  .querySelector('.new-project-form')
-  .addEventListener('submit', newFormHandler);
+// Handler for logging out
+const logoutButtonHandler = async () => {
+  const response = await fetch('/api/users/logout', {
+    method: 'POST',
+  });
 
-document
-  .querySelector('.project-list')
-  .addEventListener('click', delButtonHandler);
+  if (response.ok) {
+    document.location.replace('/');  // Redirect to home page
+  } else {
+    alert('Failed to log out');
+  }
+};
+
+// Event listeners
+document.addEventListener('DOMContentLoaded', () => {
+  fetchActivities();  // Fetch activities when the page loads
+
+  document
+    .querySelector('.activity-list')
+    .addEventListener('click', delButtonHandler);
+
+  const logoutButton = document.querySelector('#logout-button');
+  if (logoutButton) {
+    logoutButton.addEventListener('click', logoutButtonHandler);
+  }
+});
