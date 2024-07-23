@@ -2,9 +2,9 @@ const { Model, DataTypes } = require ("sequelize");
 // import our database connection from config.js
 const sequelize = require("../config/connection.js");
 
-class saved_activity extends Model {}
+class savedActivity extends Model {}
 
-saved_activity.init(
+savedActivity.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -50,4 +50,4 @@ saved_activity.init(
 );
 
 //export product tag model
-module.exports = saved_activity;
+module.exports = savedActivity;

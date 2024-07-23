@@ -5,7 +5,7 @@ const routes = require('./controllers');
 const sequelize = require('./config/connection'); // Import Sequelize connection
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 // Set up Handlebars engine
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));

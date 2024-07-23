@@ -1,6 +1,7 @@
-const { saved_activity } = require('../models');
+const { savedActivity } = require('../models');
 
-const activityData = [
+const activityData = 
+[
   {
     "user_id": "1",
     "park_name": "Abraham Lincoln Birthplace National Historical Park",
@@ -59,6 +60,6 @@ const activityData = [
   }
 ];
 
-const seedActivities = () => saved_activity.bulkCreate(activityData);
+const seedActivities = () => savedActivity.bulkCreate(activityData);
 
 module.exports = seedActivities;
