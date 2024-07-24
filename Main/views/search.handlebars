@@ -4,24 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>National Parks Activities</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/sav.css">
 </head>
-<body>
-    <form action="/search" method="get">
-        <input type="text" name="parkName" placeholder="Enter Park Name" required>
-        <button type="submit">Search</button>
-    </form>
 
-    {{#if activities.length}}
-        <h2>Activities in {{parkName}}</h2>
-        <ul>
-            {{#each activities}}
-                <li>{{this}}</li>
-            {{/each}}
-        </ul>
-    {{else}}
-        {{#if error}}
-            <p>{{error}}</p>
+<body style="background-color: #899876;">
+    <div class="container d-flex flex-column justify-content-center align-items-center min-vh-100">
+        <div class="text-center mb-4">
+           <h1 class="font-weight-bold">Experience Park Attractions</h1>
+        </div>
+
+        <div class="d-flex justify-content-center w-100">
+            <form action="/search" method="get" class="w-100" style="max-width: 350px;">
+                <div class="input-icon mb-2 position-relative">
+                    <input type="text" id="parkName" name="parkName" class="form-control rounded-pill" placeholder="Search Park Name" required>
+                    <i class="fas fa-search position-absolute"></i>
+                </div>
+            </form>
+        </div>
+
+        {{#if activities.length}}
+            <h2 class="font-weight-bold">Activities at {{parkName}}</h2>
+            <div class="divider"></div>
+            <ul class="list-group activities-list">
+                {{#each activities}}
+                    <li class="list-group-item activity-item d-flex align-items-center">
+                        <img src="{{this.image}}" alt="{{this.title}}">
+                        <span style="font-weight: bold; margin-left: 10px;">{{this.title}}</span>
+                    </li>
+                {{/each}}
+            </ul>
+        {{else}}
+            {{#if error}}
+                <div class="alert alert-danger mt-4" role="alert">
+                    {{error}}
+                </div>
+            {{/if}}
         {{/if}}
-    {{/if}}
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

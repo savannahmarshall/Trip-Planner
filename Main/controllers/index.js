@@ -21,10 +21,13 @@ router.get('/search', async (req, res) => {
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
-        
-        const data = await response.json();
 
-        const activities = data.data ? data.data.map(activity => activity.title) : [];
+        const data = await response.json();
+        const activities = data.data ? data.data.map(activity => ({
+            title: activity.title,
+            image: activity.images && activity.images.length > 0 ? activity.images[0].url : 'default-image-url.jpg'
+        })) : [];
+
         
         res.render('search', { activities, parkName });
 
@@ -82,12 +85,11 @@ router.post('/signup', (req, res) => {
 });
 
 
+// I am not sure that we need this, it messes up the login page if we have it uncommented.
+
 // // Catch-all route for other paths
 // router.get('*', (req, res) => {
 //   res.send("<h1>Wrong Route!</h1>");
 // });
 
-
 module.exports = router;
-
-
