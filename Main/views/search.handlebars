@@ -1,19 +1,27 @@
-<div id="search-container">
-  <form action="/search" method="get">
-    <input type="text" name="parkName" id="search-bar" placeholder="Search for a National Park..." value="{{parkName}}">
-    <button type="submit" id="search-button">Search</button>
-  </form>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National Parks Activities</title>
+</head>
+<body>
+    <form action="/search" method="get">
+        <input type="text" name="parkName" placeholder="Enter Park Name" required>
+        <button type="submit">Search</button>
+    </form>
 
-    {{#if activities}}
+    {{#if activities.length}}
         <h2>Activities in {{parkName}}</h2>
         <ul>
             {{#each activities}}
                 <li>{{this}}</li>
             {{/each}}
         </ul>
+    {{else}}
+        {{#if error}}
+            <p>{{error}}</p>
+        {{/if}}
     {{/if}}
-
-    {{#if error}}
-        <p>{{error}}</p>
-    {{/if}}
+</body>
+</html>
