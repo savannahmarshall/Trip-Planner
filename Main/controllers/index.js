@@ -73,7 +73,6 @@ router.post('/login', (req, res) => {
   }
 });
 
-
 // Handle signup
 router.post('/signup', (req, res) => {
   const { name, email, password } = req.body;
@@ -87,6 +86,7 @@ router.post('/signup', (req, res) => {
 
 
 // I am not sure that we need this, it messes up the login page if we have it uncommented.
+
 // // Catch-all route for other paths
 // router.get('*', (req, res) => {
 //   res.send("<h1>Wrong Route!</h1>");
