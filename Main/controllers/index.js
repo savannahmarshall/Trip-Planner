@@ -21,10 +21,13 @@ router.get('/search', async (req, res) => {
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
-        
-        const data = await response.json();
 
-        const activities = data.data ? data.data.map(activity => activity.title) : [];
+        const data = await response.json();
+        const activities = data.data ? data.data.map(activity => ({
+            title: activity.title,
+            image: activity.images && activity.images.length > 0 ? activity.images[0].url : 'default-image-url.jpg'
+        })) : [];
+
         
         res.render('search', { activities, parkName });
 

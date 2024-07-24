@@ -1,0 +1,87 @@
+.input-icon {
+    position: relative;
+    background-image: url('https://cdn.wallpapersafari.com/56/55/bNZJ0K.jpg'); /* imports image behind search bar */
+    background-size: cover; 
+    background-position: center; 
+    padding: 0.75rem;
+    border-radius: 0.5rem; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.input-icon input {
+    border: 1px solid #ddd; 
+    border-radius: 0.5rem; 
+    padding-left: 2.5rem; 
+}
+
+.input-icon .fa-search {
+    color: #000;
+    position: absolute;
+    right: 1.4rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Change cursor to pointe when hovering over the search input */
+#parkName:hover {
+    cursor: pointer;
+}
+
+/* Style the placeholder text color */
+.input-icon input::placeholder {
+    color: #000000;
+}
+
+.divider {
+        border: none;
+        border-top: 3px solid #000000;
+        margin: 10px 0; /* Space above and below the line */
+        width: 50%;
+
+}
+
+.activity-item {
+    background-color:#042A2B;
+    color: #fff; 
+    border: 2px solid #C5E6A6;
+    border-radius: 1.0rem; /* Border radius to make the corners rounded */
+    margin-top: 10px;
+    margin-bottom: 3px; /* Space between activity items */
+    padding: 10px; /* Padding inside each activity item */
+}
+
+.activity-item img {
+    width: 100px; /* Adjust width as needed */
+    height: auto; 
+    border-radius: 0.25rem; 
+    margin-right: 20px; /* Space between image and text */
+}
+
+/* Custom scrollbar styles */
+.activities-list {
+    max-height: 500px;
+    overflow-y: auto; /* Add vertical scrollbar */
+    margin-top: 20px;
+}
+
+/* Custom scrollbar styles */
+.activities-list::-webkit-scrollbar {
+    width: 14px; /* Adjust the width of the scrollbar */
+}
+
+.activities-list::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Track background color */
+}
+
+.activities-list::-webkit-scrollbar-thumb {
+    background: #C5E6A6; /* Scrollbar color */
+} 
+
+.activities-list::-webkit-scrollbar-thumb:hover {
+    background: #035b5b; /* Darker color on hover */
+}
+
+/* Change cursor to pointer when hovering over the scrollbar area */
+.activities-list {
+    cursor: pointer;
+}
