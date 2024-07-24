@@ -73,6 +73,7 @@ router.post('/login', (req, res) => {
   }
 });
 
+
 // Handle signup
 router.post('/signup', (req, res) => {
   const { name, email, password } = req.body;
@@ -92,3 +93,4 @@ router.post('/signup', (req, res) => {
 // });
 
 module.exports = router;
+
