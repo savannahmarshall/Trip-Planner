@@ -2,9 +2,9 @@ const { Model, DataTypes } = require ("sequelize");
 // import our database connection from config.js
 const sequelize = require("../config/connection.js");
 
-class saved_activity extends Model {}
+class savedActivity extends Model {}
 
-saved_activity.init(
+savedActivity.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -32,27 +32,17 @@ saved_activity.init(
       allowNull: false,
     },
     activity_photo: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
       },
     activity_url: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
       },
-    // created_at: {
-    //   type: DataTypes.DATE,
-    //   allowNull: false,
-    //   defaultValue: DataTypes.NOW,
-    //   },
-    // updated_at: {
-    //   type: DataTypes.DATE,
-    //   allowNull: false,
-    //   defaultValue: DataTypes.NOW,
-    //   },  
   },
   {
     sequelize,
-    timestamps: false,
+    timestamps: true,
     freezeTableName: true,
     underscored: true,
     modelName: "saved_activity",
@@ -60,4 +50,4 @@ saved_activity.init(
 );
 
 //export product tag model
-module.exports = saved_activity;
+module.exports = savedActivity;

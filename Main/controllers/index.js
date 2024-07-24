@@ -82,10 +82,10 @@ router.post('/signup', (req, res) => {
 });
 
 
-// I am not sure that we need this, it messes up the login page if we have it uncommented.
 // // Catch-all route for other paths
 // router.get('*', (req, res) => {
 //   res.send("<h1>Wrong Route!</h1>");
 // });
+
 
 module.exports = router;

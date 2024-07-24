@@ -1,5 +1,5 @@
 {
-  "name": "crowd-funding",
+  "name": "national-parks-explorer",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -9,22 +9,25 @@
     "seed": "node seeds/index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Andrea Fuentes, Savannah Marshall, Matt Johnson, Danielle Boenisch",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.0",
     "connect-session-sequelize": "^7.0.4",
     "dotenv": "^8.2.0",
     "express": "^4.19.2",
-    "express-handlebars": "^5.2.0",
+    "express-handlebars": "^5.3.5",
     "express-session": "^1.17.1",
     "node-fetch": "^3.3.2",
     "pg": "^8.11.3",
     "sequelize": "^6.37.3"
   },
   "devDependencies": {
-    "eslint": "^7.12.1",
+    "@eslint/js": "^9.7.0",
+    "eslint": "^9.7.0",
     "eslint-config-prettier": "^6.15.0",
-    "prettier": "^2.1.2"
+    "globals": "^15.8.0",
+    "prettier": "^2.1.2",
+    "typescript-eslint": "^7.17.0"
   }
 }
