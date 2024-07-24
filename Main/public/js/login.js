@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         alert('An error occurred while logging in. Please try again later.');
       }
     });
+
   }
 
   if (signupForm) {

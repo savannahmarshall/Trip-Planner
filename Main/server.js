@@ -4,7 +4,7 @@ const path = require('path');
 const routes = require('./controllers');
 const sequelize = require('./config/connection'); // Import Sequelize connection
 const helpers = require('./utils/helpers');
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
+// const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -48,7 +48,7 @@ app.use(routes);
 
 // Define a route for the homepage
 app.get('/', (req, res) => {
-  res.render('home', { title: 'Home Page' });
+  res.render('main', { title: 'Home Page' });
 });
 
 // Sync Sequelize models to the database, then start the server
