@@ -1,3 +1,7 @@
+ <form action="/savedActivities" method="get">
+        <input type="text" name="parkName" placeholder="Enter park name" required>
+        <button type="submit">Search</button>
+  </form>
 <!-- Loop over each object in the activities array -->
 {{#each saved_activity as |activity| }}
 <div class="row mb-4 project">
