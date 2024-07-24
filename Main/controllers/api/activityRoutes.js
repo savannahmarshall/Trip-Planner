@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const { savedActivity, User } = require('../../models');
 
-
 // GET all activities
 router.get('/', async (req, res) => {
   try {
@@ -67,35 +66,6 @@ router.post('/', async (req, res) => {
     }  
   });
 
-
-// PUT update a saved activity by id
-// router.put('/:id', async (req, res) => {
-//     const id = req.params.userId;
-//     const updatedActivityData = req.body; // Assuming req.body contains updated activity data
-  
-//     try {
-//       // Update the activities for the specified userId
-//       const updatedActivity = await savedActivity.findOneAndUpdate(
-//         updatedActivityData,
-//         { new: true } // Return the updated document
-//       );
-  
-//       // Check if the activity was found and updated
-//       if (updatedActivity) {
-//         res.json(updatedActivity); // Send the updated activity as JSON response
-//       } else {
-//         res.status(404).json({ message: 'Activity not found for the specified user ID' });
-//       }
-//     } catch (err) {
-//       // Handle errors (e.g., database errors)
-//       console.error(err);
-//       res.status(500).json({ message: 'Server error' });
-//     }
-//   });
-
-
-
-//
 /// Put -Update an existing category by id
 router.put('/:id', async (req, res) => {
     try {
@@ -118,10 +88,6 @@ router.put('/:id', async (req, res) => {
   });
   
 
-
-
-  ///
-
 // DELETE an activity by id
 router.delete('/:id', async (req, res) => {
   try {
@@ -138,29 +104,5 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
-// Route to handle the search request -- needs to be debugged
-router.get('/search', async (req, res) => {
-  const parkName = req.body.parkName;
 
-  // Fetch activities for the park
-  const apiEndpoint = `https://developer.nps.gov/api/v1/thingstodo?q=${parkName}&api_key=${API_KEY}`;
-
-  try {
-    const response = await fetch(apiEndpoint);
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    
-    const data = await response.json();
-    // console.log('API Response:', data); // Log the response data
-    
-    const activities = data.data ? data.data.map(activity => activity.name) : [];
-    
-    res.render('search', { activities, parkName });
-  } catch (error) {
-    console.error('Error fetching park activities:', error);
-    res.render('search', { error: 'Unable to fetch activities. Please try again later.' });
-  }
-});
 module.exports = router;

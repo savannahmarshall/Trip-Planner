@@ -12,7 +12,7 @@ const loginFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/profile');  // Redirect to profile page or other authenticated area
+      document.location.replace('/');  // Redirect to profile page or other authenticated area
     } else {
       alert(response.statusText);
     }
