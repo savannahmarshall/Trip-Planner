@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const { savedActivity, User } = require('../../models');
 
-
 // GET all activities
 router.get('/', async (req, res) => {
   try {
@@ -67,35 +66,6 @@ router.post('/', async (req, res) => {
     }  
   });
 
-
-// PUT update a saved activity by id
-// router.put('/:id', async (req, res) => {
-//     const id = req.params.userId;
-//     const updatedActivityData = req.body; // Assuming req.body contains updated activity data
-  
-//     try {
-//       // Update the activities for the specified userId
-//       const updatedActivity = await savedActivity.findOneAndUpdate(
-//         updatedActivityData,
-//         { new: true } // Return the updated document
-//       );
-  
-//       // Check if the activity was found and updated
-//       if (updatedActivity) {
-//         res.json(updatedActivity); // Send the updated activity as JSON response
-//       } else {
-//         res.status(404).json({ message: 'Activity not found for the specified user ID' });
-//       }
-//     } catch (err) {
-//       // Handle errors (e.g., database errors)
-//       console.error(err);
-//       res.status(500).json({ message: 'Server error' });
-//     }
-//   });
-
-
-
-//
 /// Put -Update an existing category by id
 router.put('/:id', async (req, res) => {
     try {
@@ -117,10 +87,6 @@ router.put('/:id', async (req, res) => {
     }
   });
   
-
-
-
-  ///
 
 // DELETE an activity by id
 router.delete('/:id', async (req, res) => {
