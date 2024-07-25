@@ -34,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
         alert('An error occurred while logging in. Please try again later.');
       }
     });
-
   }
 
   if (signupForm) {
@@ -42,23 +41,21 @@ document.addEventListener('DOMContentLoaded', () => {
       event.preventDefault(); // Prevent default form submission behavior
 
       // Gather data from the form
-      const name = document.querySelector('#name-signup').value;
       const email = document.querySelector('#email-signup').value;
       const password = document.querySelector('#password-signup').value;
 
       try {
         const response = await fetch('/signup', {
-          method: 'POST', // Use POST for signup
+          method: 'POST',
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify({ name, email, password }) // Send data as JSON
+          body: JSON.stringify({ email, password })
         });
 
         if (response.ok) {
           // Handle successful signup (e.g., show a message or redirect)
           alert('Account created successfully. Please log in.');
-          // Optionally, you might want to redirect to the login page:
           // window.location.href = '/login';
         } else {
           // Handle signup failure
