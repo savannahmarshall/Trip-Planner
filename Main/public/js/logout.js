@@ -2,7 +2,7 @@
 
 const logoutHandler = async () => {
   try {
-    const response = await fetch('/api/users/logout', {
+    const response = await fetch('/logout', {
       method: 'POST',
     });
 
