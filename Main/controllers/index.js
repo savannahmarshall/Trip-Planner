@@ -4,9 +4,9 @@ const User = require('../models/User'); // Import User model
 
 router.use('/api', apiRoutes);
 
-router.get('/navbar', (req, res) => {
-  res.render('navbar');
-});
+// router.get('/navbar', (req, res) => {
+//   res.render('navbar');
+// });
 // Route to handle the homepage request
 router.get('/homepage', async (req, res) => {
     const parkName = req.query.parkName; 
@@ -40,7 +40,11 @@ router.get('/homepage', async (req, res) => {
 });
 
 router.get('/', (req, res) => {
-  res.render('homepage', { activities: [] });
+  if (!req.session.logged_in) {
+    res.redirect('/login');
+    return;
+  }
+  res.render('homepage');
 });
 
 // Route to handle login and redirect
@@ -54,20 +58,20 @@ router.get('/login', (req, res) => {
   res.render('login');
   });
   
-//RENDER nav
-router.get('/nav', (req, res) => {
-  // If the user is already logged in, redirect the request to another route
-  if (req.session.logged_in) {
-    res.redirect('/homepage');
-    return;
-  }
-  res.render('login');
-});
+// //RENDER nav
+// router.get('/nav', (req, res) => {
+//   // If the user is already logged in, redirect the request to another route
+//   if (req.session.logged_in) {
+//     res.redirect('/homepage');
+//     return;
+//   }
+//   res.render('login');
+// });
 
 
 
-    res.render('login');
-});
+//     res.render('login');
+// });
 
 // Handle login
 router.post('/login', async (req, res) => {
