@@ -12,14 +12,17 @@
 <body>
   <div class="flex-column justify-space-around">
     <header class="display-flex justify-space-between align-center p-2">
-      {{{ navbar }}}
+      {{>navbar }}
     </header>
     <main class="container container-fluid mt-5">
       <!-- Render the sub layout -->
-      {{{ body }}}
+      {{!-- {{{ body }}} --}}
+        {{> search }}
     </main>
+
+   
     <footer>
-        {{{ footer }}}
+     <p>&#169; 2024 Park Explorer</p>
     </footer>
   </div>
   {{!-- <script src="../../public/js/script.js"></script>
