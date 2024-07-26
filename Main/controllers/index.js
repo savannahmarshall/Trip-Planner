@@ -65,10 +65,6 @@ router.get('/nav', (req, res) => {
 });
 
 
-
-    res.render('login');
-});
-
 // Handle login
 router.post('/login', async (req, res) => {
   const { email, password } = req.body;
@@ -112,7 +108,14 @@ router.post('/signup', async (req, res) => {
   }
 });
 
+router.get('/logout', (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect('login');
+    return;
+  }
 
+  res.render('login');
+});
 
 
 
