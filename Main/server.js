@@ -23,14 +23,15 @@ const sess = {
     db: sequelize
   })
 };
+const hbs = exphbs.create({});
+
 
 app.use(session(sess));
 
 // Set up Handlebars engine
-app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+app.engine('handlebars', hbs.engine);
 
 app.set('view engine', 'handlebars');
-app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -43,7 +44,7 @@ app.use(routes);
 
 // Define a route for the homepage
 app.get('/', (req, res) => {
-  res.render('main', { title: 'Home Page' });
+  res.render('homepage', { title: 'Home Page' });
 });
 
 // Sync Sequelize models to the database, then start the server
