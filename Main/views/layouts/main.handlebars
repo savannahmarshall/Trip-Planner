@@ -14,15 +14,16 @@
     <header class="display-flex justify-space-between align-center p-2">
       {{>navbar }}
     </header>
+
     <main class="container container-fluid mt-5">
       <!-- Render the sub layout -->
       {{{ body }}} 
     </main>
 
-   
     <footer>
-     <p>&#169; 2024 Park Explorer</p>
+    {{>footer}}
     </footer>
+
   </div> 
    <script src="../../public/js/script.js"></script>
   <!-- Render script for logged in users only -->
