@@ -1,0 +1,18 @@
+<!-- Loop over each object in the activities array -->
+{{#each saved_activity as |activity| }}
+<div class="row mb-4 project">
+    <div class="col-md-5">
+        <h2>
+            <a href="/activity/{{activity.id}}">{{activity.name}}</a>
+        </h2>
+    </div>
+    <div class="col-md-7">
+        <p>
+            {{activity.description}}
+        </p>
+    </div>
+</div>
+{{/each}}
+
+<script src="/js/savedActivitiess"></script>
+

@@ -1,8 +1,6 @@
 const router = require('express').Router();
 const apiRoutes = require('./api');
 const User = require('../models/User'); // Import User model
-const bodyParser = require('body-parser');
-
 
 router.use('/api', apiRoutes);
 
@@ -15,7 +13,7 @@ router.get('/homepage', async (req, res) => {
     }
 
     // Fetch activities for the park
-    const apiEndpoint = `https://developer.nps.gov/api/v1/thingstodo?q=${parkName}&api_key=${process.env.API_KEY}`;
+    const apiEndpoint = `https://developer.nps.gov/api/v1/thingstodo?q=${parkName}&api_key=92lNKhVrt2znf1zlwHNEEHOPh3xgkEzldzJfhZ63`;
 
     try {
         const response = await fetch(apiEndpoint);
@@ -101,23 +99,6 @@ router.post('/signup', async (req, res) => {
     console.error('Error creating account:', error);
     res.status(500).json({ message: 'Internal server error' });
   }
-});
-
-router.use(bodyParser.json());
-
-router.post('/', async (req, res) => {
-    const { title, image, url } = req.body;
-
-    try {
-        // Save the activity to the database or perform any necessary actions
-        // This is just an example, so adjust based on your database model
-        const savedActivity = await Activity.create({ title, image, url });
-
-        res.status(201).json({ message: 'Activity saved successfully', activity: savedActivity });
-    } catch (error) {
-        console.error('Error saving activity:', error);
-        res.status(500).json({ message: 'Internal server error' });
-    }
 });
 
 module.exports = router;

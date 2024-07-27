@@ -1,10 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+
+
+a{ 
+  text-decoration: none !important;
+}
+
 .navbar {
   background-color: #042a2b !important;
   color: #c5E6A6;
 }
 
-.nav-link, .navbar-brand {
+.navbar-brand{
+padding: 0 1%;
+text-decoration: none;
+}
+
+.navbar-brand:hover {
+  color: inherit;
   text-decoration: none;
+}
+
+.nav-link, .navbar-brand {
+  text-decoration: none !important;
   color: #c5E6A6;
 }
 
@@ -13,5 +30,174 @@ background-color: #899878;
 border: none;
 border-radius: 10px;
 padding: 1% 3%;
-
 }
+
+/* search body start*/
+.homepage-headline{
+  margin-top: 2%s;
+}
+
+body{
+background-color: #899876;
+font-family: "Poppins", Helvetica, sans-serif;
+}
+
+/* .activities-list{
+  width: 50%;
+} */
+
+.headline{
+  padding: 2%;
+  font-weight: bold;
+}
+.activities-container{
+  justify-content: center;
+  align-items: center; 
+  height: min-vh-100;
+  padding: 2%;
+}
+
+.search-form{
+  max-width: 350px;
+}
+
+.search-title {
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.activity-item{
+  align-items: center;
+  background-color: #042a2b;
+  color:#c5E6A6;
+  border-radius: 20px;
+  border:none;
+  padding:4%;
+}
+
+.park-name{
+  font-weight: bold;
+}
+
+/* search body end*/
+
+/* saved activities start*/
+
+#saved-activities-container{
+  text-align: center;
+  margin-top: 3%;
+}
+
+#saved-activities-headline {
+text-align: center;
+}
+
+#saved-park-headline {
+font-size: large;
+color: #6b4b3e;
+text-align: center;
+padding: 2%;
+margin: 2% 0;
+}
+
+.saved-activity-card {
+display: flex;
+flex-direction: row;
+background-color: #042a2b;
+color: #c5e6a6;
+padding: 2% 1%;
+border-radius: 20px;
+text-align: left;
+align-items: center;
+margin: 2%;
+}
+
+.saved-activity-image-div {
+display: flex;
+text-align: left;
+margin: 0;
+justify-content: left;
+}
+
+.saved-activity-image {
+border-radius: 15px;
+width: 100%;
+max-width: 200px;
+margin: 0;
+}
+
+.saved-activities-title {
+text-align: left;
+align-items: center;
+padding: 0 4%;
+font-size: 90%;
+}
+
+.unsave-btn-form {
+display: flex;
+justify-content: right;
+align-items: center;
+}
+
+.unsave-btn-div {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.unsave-btn {
+background-color: #899876;
+color: #042a2b;
+border: 0;
+}
+
+@media only screen and (max-width: 800px) {
+  
+  .saved-activities-title {
+      text-align: left;
+      align-items: center;
+      padding: 0;
+      /* font-size: 0%; */
+    }
+
+.saved-activity-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1%;
+  margin: 0;
+}
+
+.saved-activities-title {
+text-align: left;
+align-items: center;
+padding: 0 4%;
+font-size: 90%;
+}
+
+.unsave-btn-form{
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.saved-activities-title,
+.unsave-button-div,
+.saved-activity-image-div
+{
+  margin: 4% 0;
+}
+
+.saved-activity-image-div {
+    display: flex;
+    text-align: left;
+   
+    justify-content: center;
+  } 
+
+.saved-activity-image {
+    min-width: 100px;
+    margin: 0;
+  }
+}
+
+/* saved activities start*/

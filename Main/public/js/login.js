@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Ensure the forms exist before adding event listeners
   if (loginForm) {
     loginForm.addEventListener('submit', async (event) => {
+      console.log(`$$$$`);
       event.preventDefault(); // Prevent default form submission behavior
 
       // Gather data from the form
@@ -20,10 +21,11 @@ document.addEventListener('DOMContentLoaded', () => {
           },
           body: JSON.stringify({ email, password }) // Send data as JSON
         });
-
+      
         if (response.ok) {
+
           // Redirect to homepage on successful login
-          window.location.href = '/';
+          window.location.href = '/homepage';
         } else {
           // Handle login failure
           const error = await response.json();
