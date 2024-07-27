@@ -26,9 +26,12 @@ router.get('/homepage', async (req, res) => {
 
         const data = await response.json();
         const activities = data.data ? data.data.map(activity => ({
+            id: activity.id,
+            fullName: activity.relatedParks && activity.relatedParks.length > 0 ? activity.relatedParks[0].fullName : '',
             title: activity.title,
             url: activity.url,
-            image: activity.images && activity.images.length > 0 ? activity.images[0].url : 'default-image-url.jpg'
+            image: activity.images && activity.images.length > 0 ? activity.images[0].url : 'default-image-url.jpg',
+           
         })) : [];
 
         res.render('homepage', { activities, parkName });
@@ -112,19 +115,5 @@ router.get('/logout', (req, res) => {
   res.render('login');
 });
 
-router.post('/', async (req, res) => {
-    const { title, image, url } = req.body;
-
-    try {
-        // Save the activity to the database or perform any necessary actions
-        // This is just an example, so adjust based on your database model
-        const savedActivity = await Activity.create({ title, image, url });
-
-        res.status(201).json({ message: 'Activity saved successfully', activity: savedActivity });
-    } catch (error) {
-        console.error('Error saving activity:', error);
-        res.status(500).json({ message: 'Internal server error' });
-    }
-});
 
 module.exports = router;

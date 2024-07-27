@@ -34,9 +34,12 @@
                     <li class="list-group-item activity-item d-flex align-items-center">
                         <img src="{{this.image}}" alt="{{this.title}}">
                         <span style="font-weight: bold; margin-left: 10px;">{{this.title}}</span>
-                        <form action="/" method="post" class="save-btn">
+                        <form action="/api/activities" method="POST" class="save-btn">
                             <input type="hidden" name="title" value="{{this.title}}">
                             <input type="hidden" name="image" value="{{this.image}}">
+                              <input type="hidden" name="id" value="{{this.id}}">
+                            <input type="hidden" name="url" value="{{this.url}}">
+                            <input type="hidden" name="fullName" value="{{this.fullName}}">
                             <button type="submit" class="btn btn-success btn-sm" id="save-btn">Save</button>
                         </form>
                     </li>

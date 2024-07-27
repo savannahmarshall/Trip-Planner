@@ -12,6 +12,10 @@ savedActivity.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    np_activity_id: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {

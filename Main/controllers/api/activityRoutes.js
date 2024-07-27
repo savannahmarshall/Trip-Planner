@@ -55,14 +55,24 @@ router.get('/:user_id/:park_name', async (req, res) => {
 
 
 // POST a new saved activity by user
+        // Save the activity to the database or perform any necessary actions
 router.post('/', async (req, res) => {
+  const { id, title, fullName, image, url } = req.body;
     try {
-      const newSavedActivity = await savedActivity.create(req.body);
-      res.json(newSavedActivity);
-        res.status(201).json(newSavedActivity);
+      console.log({ id, title, fullName, image, url });
+    
+      const newSavedActivity = await savedActivity.create({ 
+        np_activity_id:id, 
+        user_id:req.session.user_id, 
+        activity: title, 
+        park_name: fullName, 
+        image: image, 
+        activity_url: url })
+    return  res.status(201).json(newSavedActivity);
+  
     } catch (err) {
         console.log(err);
-      res.status(400).json({ message: 'Failed to create product', error: err });
+        return res.status(400).json({ message: 'Failed to create product', error: err });
     }  
   });
 
