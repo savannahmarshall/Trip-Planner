@@ -200,4 +200,12 @@ font-size: 90%;
   }
 }
 
-/* saved activities start*/
+/* saved activities end*/
+footer {
+  margin-top: 25px;
+}
+
+footer p {
+  line-height: .5;
+  font-size: smaller;
+}

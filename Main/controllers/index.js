@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 
 
 router.use('/api', apiRoutes);
-
+router.use(bodyParser.json());
 
 router.get('/homepage', async (req, res) => {
     const parkName = req.query.parkName; 
@@ -103,7 +103,14 @@ router.post('/signup', async (req, res) => {
   }
 });
 
-router.use(bodyParser.json());
+router.get('/logout', (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect('login');
+    return;
+  }
+
+  res.render('login');
+});
 
 router.post('/', async (req, res) => {
     const { title, image, url } = req.body;
