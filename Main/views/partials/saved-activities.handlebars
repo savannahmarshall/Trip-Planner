@@ -8,39 +8,36 @@
   <div class="park-container">
     <div class="row" id="saved-park-headline">
       <h1>
-        {{this.park_name}}
+        {{this.savedParkName}}
       </h1>
     </div>
+    <div class="park-container">
       {{#each savedActivities}}
-        <a href="{{this.url}}"></a>
-    <div class="row saved-activity-card">
-    
-    
-      <div class="col col-2 saved-activity-image-div">
-        <!-- <img src="{{this.image}}" alt="{{this.title}}"> -->
-        <img src="https://www.nps.gov/common/uploads/cropped_image/85B87145-027F-E7DE-82C04E8C4BCBC3B9.jpg"
-          class="saved-activity-image" alt="{{this.title}}">
+      <a href="{{this.url}}"></a>
+      <div class="row saved-activity-card">
+        <div class="col col-2 saved-activity-image-div">
+          <!-- <img src="{{this.image}}" alt="{{this.title}}"> -->
+          <img src="{{this.image}}"
+            class="saved-activity-image" alt="{{this.title}}">
+        </div>
+        <div class="col col-9 saved-activities-title">
+          {{this.title}}
+        </div>
+        <div class="col col-1 sunsave-button-div">
+          <form action="/api/activities/{{this.id}}" method="delete" class="unsave-btn-form">
+            <input type="hidden" name="parkName" value="{{../parkName}}">
+            <button type="submit" class="btn btn-success btn-sm unsave-btn">Unsave</button>
+          </form>
+        </div>
       </div>
-      <div class="col col-9 saved-activities-title">
-        {{this.title}}
-      </div>
-      <div class="col col-1 sunsave-button-div">
-        <form action="/" method="post" class="unsave-btn-form">
-          <input type="hidden" name="title" value="{{this.title}}">
-          <input type="hidden" name="image" value="{{this.image}}">
-          <button type="submit" class="btn btn-success btn-sm unsave-btn">Unsave</button>
-        </form>
-      </div>
-      </div>
- 
+      {{/each}}
     </div>
-</a>
 
-     {{/each}}
   </div>
- {{else}}
-{{#if error}}
-{{error}}
-            {{/if}}
-        {{/if}}
-</div>
+  {{else}}
+  {{#if error}}
+  {{error}}
+  {{/if}}
+  {{/if}}
+  {{!--
+</div> --}}
