@@ -68,17 +68,19 @@ a {
 
 
 /* Saved Activities */
-#saved-activities-container, #saved-activities-headline, #saved-park-headline {
+#saved-activities-headline, .saved-park-headline {
     text-align: center;
     margin-top: 3%;
 }
 
-#saved-park-headline {
-    font-size: large;
+.saved-park-headline h1 {
+    font-size: small;
     color: #6b4b3e;
+    text-align: c
+    enter;
     padding: 2%;
     margin: 2% 0;
-}
+    }
 
 .saved-activity-card {
     display: flex;
@@ -88,7 +90,7 @@ a {
     padding: 2% 1%;
     border-radius: 20px;
     align-items: center;
-    margin: 2%;
+    margin: 2% 0%;
 }
 
 .saved-activity-image-div {
@@ -109,6 +111,10 @@ a {
     align-items: center;
     padding: 0 4%;
     font-size: 90%;
+}
+.saved-activity-link {
+    text-decoration: none;
+    color: #C5E6A6;
 }
 
 .unsave-btn-form, .unsave-btn-div {

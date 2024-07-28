@@ -14,12 +14,13 @@ router.get("/homepage", async (req, res) => {
   const apiEndpoint = `https://developer.nps.gov/api/v1/thingstodo?q=${parkName}&api_key=${process.env.API_KEY}`;
 
   try {
+
+     // Group activities by parkName
+     let groupedActivities = {};
+    if (req.session.user.id) {
     const savedActivities = await savedActivity.findAll({
       where: [{ user_id: req.session.user.id }],
     });
-
-    // Group activities by parkName
-    let groupedActivities = {};
 
     savedActivities.forEach(activity => {
       if (!groupedActivities[activity.park_name]) {
@@ -32,17 +33,14 @@ router.get("/homepage", async (req, res) => {
         image: activity.image,
       });
     });
-
+  }
     if (!parkName) {
       return res.render("homepage", { activities: [], groupedActivities });
     }
-    
     const response = await fetch(apiEndpoint);
-
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
-
     const data = await response.json();
     const activities = data.data
       ? data.data.map((activity) => ({
