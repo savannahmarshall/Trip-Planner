@@ -1,11 +1,9 @@
-// public/js/logout.js
-
-const logoutHandler = async () => {
+const logoutHandler = async (e) => {
+  e.preventDefault();
   try {
-    const response = await fetch('/logout', {
+    const response = await fetch('/api/users/logout', {
       method: 'POST',
     });
-
     if (response.ok) {
       document.location.replace('/');  // Redirect to home page
     } else {
@@ -15,10 +13,9 @@ const logoutHandler = async () => {
     console.error('Logout failed:', error);  // Log error to the console
   }
 };
-
 const logoutButton = document.querySelector('#logout-button');
-
 if (logoutButton) {
-  logoutButton.addEventListener('click', logoutHandler);
+
+  logoutButton.addEventListener('submit', logoutHandler);
 }
 

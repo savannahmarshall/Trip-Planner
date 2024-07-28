@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Ensure the forms exist before adding event listeners
   if (loginForm) {
     loginForm.addEventListener('submit', async (event) => {
-      console.log(`$$$$`);
       event.preventDefault(); // Prevent default form submission behavior
 
       // Gather data from the form
