@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100..900&family=Red+Hat+Display:wght@300..900&display=swap');
+
+/* General Styles */
+body {
+    background-color: #899876;
+    font-family: "Poppins", Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #042a2b !important;
+    color: #c5E6A6;
+}
+
+.navbar-brand, .nav-link {
+    padding: 0 1%;
+    text-decoration: none !important;
+    color: #c5E6A6;
+}
+
+/* No Button */
+.no-button {
+    background-color: #899878;
+    border: none;
+    border-radius: 10px;
+    padding: 1% 3%;
+}
+
+/* Homepage */
+.homepage-headline {
+    margin-top: 2%;
+}
+
+.headline {
+    padding: 2%;
+    font-weight: bold;
+}
+
+.activities-container {
+    justify-content: center;
+    align-items: center;
+    height: min-vh-100;
+    padding: 2%;
+}
+
+.search-form {
+    max-width: 350px;
+}
+
+.search-title, .park-name {
+    font-weight: bold;
+}
+
+.activity-item {
+    align-items: center;
+    background-color: #042a2b;
+    color: #c5E6A6;
+    border-radius: 20px;
+    border: none;
+    padding: 4%;
+}
+
+
+
+/* Saved Activities */
+#saved-activities-container, #saved-activities-headline, #saved-park-headline {
+    text-align: center;
+    margin-top: 3%;
+}
+
+#saved-park-headline {
+    font-size: large;
+    color: #6b4b3e;
+    padding: 2%;
+    margin: 2% 0;
+}
+
+.saved-activity-card {
+    display: flex;
+    flex-direction: row;
+    background-color: #042a2b;
+    color: #c5e6a6;
+    padding: 2% 1%;
+    border-radius: 20px;
+    align-items: center;
+    margin: 2%;
+}
+
+.saved-activity-image-div {
+    display: flex;
+    text-align: left;
+    justify-content: left;
+}
+
+.saved-activity-image {
+    border-radius: 15px;
+    width: 100%;
+    max-width: 200px;
+    margin: 0;
+}
+
+.saved-activities-title {
+    text-align: left;
+    align-items: center;
+    padding: 0 4%;
+    font-size: 90%;
+}
+
+.unsave-btn-form, .unsave-btn-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.unsave-btn, .login-btn, .signup-btn {
+    background-color: #899876;
+    color: #042a2b;
+    border: 0;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 800px) {
+    .activity-item{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .activity-item img {
+        width: 100px;
+        height: auto;
+        border-radius: 0.25rem;    
+    }
+
+    .activity-item .save-btn {
+        position: absolute;
+        /* right: 10px; */
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .activty-item span{
+margin-top:10%;
+    }
+
+    .saved-activities-title {
+        text-align: left;
+        align-items: center;
+        padding: 0 4%;
+        font-size: 90%;
+    }
+
+    .saved-activity-card {
+        display: flex;
+        flex-direction: column;
+        padding: 1%;
+        margin: 0;
+    }
+
+    .unsave-btn-form, .unsave-button-div, .saved-activity-image-div {
+        margin: 4% 0;
+    }
+
+    .saved-activity-image-div {
+        justify-content: center;
+    }
+
+    .saved-activity-image {
+        min-width: 100px;
+        margin: 0;
+    }
+}
+
+/* Input Icon */
+.input-icon {
+    position: relative;
+    background-image: url('https://cdn.wallpapersafari.com/56/55/bNZJ0K.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.input-icon input {
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    padding-left: 2.5rem;
+}
+
+.input-icon .fa-search {
+    color: #000;
+    position: absolute;
+    right: 1.4rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.input-icon input::placeholder {
+    color: #000000;
+}
+
+/* Miscellaneous */
+.divider {
+    border: none;
+    border-top: 3px solid #000000;
+    margin: 10px 0;
+    width: 50%;
+}
+
+.activity-item {
+    background-color: #042A2B;
+    color: #fff;
+    border: 2px solid #C5E6A6;
+    border-radius: 1rem;
+    margin: 10px 0 3px 0;
+    padding: 10px;
+    position: relative;
+}
+
+.activity-item img {
+    width: 100px;
+    height: auto;
+    border-radius: 0.25rem;
+    margin-right: 20px;
+}
+
+.activity-item .activity-content {
+    flex-grow: 1;
+}
+
+.activity-item .save-btn {
+    position: absolute;
+    float: right;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Custom Scrollbar */
+.activities-list {
+    margin-top: 20px;
+    overflow-x: hidden;
+    cursor: pointer;
+    width: 70%;
+}
+
+.activities-list::-webkit-scrollbar {
+    width: 12px;
+}
+
+.activities-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.activities-list::-webkit-scrollbar-thumb {
+    background: #C5E6A6;
+}
+
+.activities-list::-webkit-scrollbar-thumb:hover {
+    background: #035b5b;
+}
+
+/* login start */
+.auth-container {
+    display: flex;
+    margin: 4%;
+    text-align:center;
+  
+}
+h2{
+    text-align: center;
+}
+
+.form-group{
+    margin: 3%; 
+    /* justify-content: center;   */
+}
+
+.login-btn, .signup-btn {
+    background-color: #042A2B;
+    color: #C5E6A6;
+    border: 0;
+}
+
+.form-group input{
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* login end */

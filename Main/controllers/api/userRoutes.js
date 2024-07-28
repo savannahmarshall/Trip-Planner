@@ -5,35 +5,6 @@ const router = express.Router();
 const User = require('../../models/User');
 const saved_activity = require('../../models/saved_activity');
 
-// Handle user login
-router.post('/login', async (req, res) => {
-  try {
-    const { email, password } = req.body;
-
-    // Find the user by email
-    const user = await User.findOne({ where: { email } });
-
-    if (!user) {
-      return res.status(404).json({ message: 'User not found' });
-    }
-
-    // Check the password
-    const validPassword = user.checkPassword(password);
-    if (!validPassword) {
-      return res.status(400).json({ message: 'Invalid password' });
-    }
-
-    // Save user data to session
-    req.session.user_id = user.id;
-    req.session.email = user.email;
-    req.session.logged_in = true;  // Add a flag to indicate that the user is logged in
-
-    res.json({ message: 'Login successful' });
-  } catch (error) {
-    res.status(500).json({ message: 'Server error' });
-  }
-});
-
 // Handle user signup
 router.post('/', async (req, res) => {
   try {

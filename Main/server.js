@@ -43,9 +43,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
 
 // Define a route for the homepage
-app.get('/', (req, res) => {
-  res.render('homepage', { title: 'Home Page' });
-});
+// app.get('/', (req, res) => {
+//   console.log(`++server`);
+//   res.render('homepage', { title: 'Home Page' });
+// });
 
 // Sync Sequelize models to the database, then start the server
 sequelize.sync({ force: false }).then(() => {

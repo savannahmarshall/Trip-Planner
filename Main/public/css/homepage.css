@@ -74,8 +74,9 @@ body {
 
 /* Custom scrollbar styles */
 .activities-list {
-    max-height: 500px;
-    overflow-y: auto; /* Add vertical scrollbar */
+    /* max-height: 500px; */
+    /* overflow-y: auto;  */
+    /* Add vertical scrollbar */
     margin-top: 20px;
     overflow-x: hidden; /* Ensure no horizontal overflow */
 }

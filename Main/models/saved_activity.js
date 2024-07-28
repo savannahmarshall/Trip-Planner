@@ -27,11 +27,7 @@ savedActivity.init(
       type: DataTypes.TEXT,
       allowNull: false,
     },
-    activity_description: {
-      type: DataTypes.TEXT,
-      allowNull: false,
-    },
-    activity_photo: {
+    image: {
       type: DataTypes.TEXT,
       allowNull: false,
       },
