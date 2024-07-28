@@ -1,46 +1,47 @@
 <div class="container" id="saved-activities-container">
-  {{#if savedActivities.length}}
+   {{#if groupedActivities}}
   <div class="row" id="saved-activities-headline">
     <h1>
       MY SAVED PARKS
     </h1>
   </div>
-  <div class="park-container">
+ {{#each groupedActivities}}
+  <div class="park-container-1">
     <div class="row" id="saved-park-headline">
       <h1>
-        {{this.park_name}}
+        {{@key}}
       </h1>
     </div>
-      {{#each savedActivities}}
-        <a href="{{this.url}}"></a>
-    <div class="row saved-activity-card">
-    
-    
-      <div class="col col-2 saved-activity-image-div">
-        <!-- <img src="{{this.image}}" alt="{{this.title}}"> -->
-        <img src="https://www.nps.gov/common/uploads/cropped_image/85B87145-027F-E7DE-82C04E8C4BCBC3B9.jpg"
-          class="saved-activity-image" alt="{{this.title}}">
-      </div>
-      <div class="col col-9 saved-activities-title">
-        {{this.title}}
-      </div>
-      <div class="col col-1 sunsave-button-div">
-        <form action="/" method="post" class="unsave-btn-form">
-          <input type="hidden" name="title" value="{{this.title}}">
-          <input type="hidden" name="image" value="{{this.image}}">
-          <button type="submit" class="btn btn-success btn-sm unsave-btn">Unsave</button>
-        </form>
-      </div>
-      </div>
- 
-    </div>
-</a>
+    <div class="park-container">
+      {{#each this}}
+      <div id="{{this.id_}}" class="row saved-activity-card">
+        <div class="col col-2 saved-activity-image-div">
+          <img src="{{this.image}}"
+            class="saved-activity-image" alt="{{this.title}}">
+        </div>
 
-     {{/each}}
+        <div class="col col-9 saved-activities-title"><a href="{{this.url}}">
+          {{this.title}}
+        </a></div>
+        <div class="col col-1 sunsave-button-div">
+          <form class="unsave-btn-form">
+            <input type="hidden" name="id" value="{{this.id}}">
+            <button type="submit" class="btn btn-success btn-sm unsave-btn">Unsave</button>
+          </form>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+
   </div>
- {{else}}
-{{#if error}}
-{{error}}
-            {{/if}}
-        {{/if}}
+      {{/each}}
+
+  {{else}}
+  {{#if error}}
+  {{error}}
+  {{/if}}
+  {{/if}}
+  
 </div>
+
+ <script src="/js/savedActivities.js"></script>

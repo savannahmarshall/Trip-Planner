@@ -136,7 +136,7 @@ a {
         border-radius: 0.25rem;    
     }
 
-    .activity-item .save-btn {
+    .activity-item .save-btn-form {
         position: absolute;
         /* right: 10px; */
         top: 50%;
