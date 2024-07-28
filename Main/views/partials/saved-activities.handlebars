@@ -1,16 +1,16 @@
 <div class="container" id="saved-activities-container">
    {{#if groupedActivities}}
   <div class="row" id="saved-activities-headline">
-    <h1>
+    <h1 class="my-saved-parks">
       MY SAVED PARKS
     </h1>
   </div>
  {{#each groupedActivities}}
   <div class="park-container-1">
-    <div class="row" id="saved-park-headline">
-      <h1>
+    <div class="row" class="saved-park-headline">
+      <h2 class="park-name">
         {{@key}}
-      </h1>
+      </h2>
     </div>
     <div class="park-container">
       {{#each this}}
@@ -20,10 +20,10 @@
             class="saved-activity-image" alt="{{this.title}}">
         </div>
 
-        <div class="col col-9 saved-activities-title"><a href="{{this.url}}">
+        <div class="col col-9 saved-activities-title"><a href="{{this.url}}" class="saved-activity-link" >
           {{this.title}}
         </a></div>
-        <div class="col col-1 sunsave-button-div">
+        <div class="col col-1 unsave-button-div">
           <form class="unsave-btn-form">
             <input type="hidden" name="id" value="{{this.id}}">
             <button type="submit" class="btn btn-success btn-sm unsave-btn">Unsave</button>

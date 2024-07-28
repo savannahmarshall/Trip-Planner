@@ -22,8 +22,6 @@ router.get("/homepage", async (req, res) => {
       where: [{ user_id: req.session.user.id }],
     });
 
-   
-
     savedActivities.forEach(activity => {
       if (!groupedActivities[activity.park_name]) {
         groupedActivities[activity.park_name] = [];
