@@ -8,7 +8,6 @@ if (process.env.DB_URL) {
   sequelize = new Sequelize(process.env.DB_URL);
  
 } else {
-  console.log(`@@@@`, process.env.DB_URL, process.env.DB_NAME, process.env.DB_USER);
   sequelize = new Sequelize(
     process.env.DB_NAME,
     process.env.DB_USER,
