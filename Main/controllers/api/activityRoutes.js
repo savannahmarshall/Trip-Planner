@@ -69,8 +69,8 @@ router.post('/', async (req, res) => {
         image: image, 
         activity_url: url })
 
-    // res.status(201).json(newSavedActivity);
-    res.redirect(`/homepage?parkName=${parkName}`);
+    res.status(201).json(newSavedActivity);
+    // res.redirect(`/homepage?parkName=${parkName}`);
     } catch (err) {
         console.log(err);
         res.status(400).json({ message: 'Failed to create activity', error: err });
@@ -108,9 +108,8 @@ router.delete('/:id', async (req, res) => {
         id: req.params.id,
       },
     });
-
-    // res.status(200).json({ message: 'activity deleted successfully' });
-    res.redirect(`/homepage?parkName=${parkName}`);
+    res.status(200).json({ message: 'activity deleted successfully' });
+    // res.redirect(`/homepage?parkName=${parkName}`);
   } catch (err) {
     console.log(err);
     res.status(500).json({ message: 'Failed to delete activity', error: err });

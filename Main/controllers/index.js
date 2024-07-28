@@ -17,18 +17,26 @@ router.get("/homepage", async (req, res) => {
     const savedActivities = await savedActivity.findAll({
       where: [{ user_id: req.session.user.id }],
     });
-  
-    const userActivities = savedActivities?.map((activity) => ({
-      id: activity.id,
-      title: activity.activity,
-      url: activity.activity_url,
-      image: activity.image,
-    }));
-  
-    if (!parkName) {
-      return res.render("homepage", { activities: [], savedActivities: userActivities });
-    }
 
+    // Group activities by parkName
+    let groupedActivities = {};
+
+    savedActivities.forEach(activity => {
+      if (!groupedActivities[activity.park_name]) {
+        groupedActivities[activity.park_name] = [];
+      }
+      groupedActivities[activity.park_name].push({
+        id: activity.id,
+        title: activity.activity,
+        url: activity.activity_url,
+        image: activity.image,
+      });
+    });
+
+    if (!parkName) {
+      return res.render("homepage", { activities: [], groupedActivities });
+    }
+    
     const response = await fetch(apiEndpoint);
 
     if (!response.ok) {
@@ -53,7 +61,7 @@ router.get("/homepage", async (req, res) => {
       : [];
 
     res.render("homepage", {
-      savedActivities: userActivities,
+      groupedActivities,
       activities,
       parkName,
     });

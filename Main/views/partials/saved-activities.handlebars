@@ -1,31 +1,31 @@
 <div class="container" id="saved-activities-container">
-  {{#if savedActivities.length}}
+   {{#if groupedActivities}}
   <div class="row" id="saved-activities-headline">
     <h1>
       MY SAVED PARKS
     </h1>
   </div>
-  <div class="park-container">
+ {{#each groupedActivities}}
+  <div class="park-container-1">
     <div class="row" id="saved-park-headline">
       <h1>
-        {{this.savedParkName}}
+        {{@key}}
       </h1>
     </div>
     <div class="park-container">
-      {{#each savedActivities}}
-      <a href="{{this.url}}"></a>
-      <div class="row saved-activity-card">
+      {{#each this}}
+      <div id="{{this.id_}}" class="row saved-activity-card">
         <div class="col col-2 saved-activity-image-div">
-          <!-- <img src="{{this.image}}" alt="{{this.title}}"> -->
           <img src="{{this.image}}"
             class="saved-activity-image" alt="{{this.title}}">
         </div>
-        <div class="col col-9 saved-activities-title">
+
+        <div class="col col-9 saved-activities-title"><a href="{{this.url}}">
           {{this.title}}
-        </div>
+        </a></div>
         <div class="col col-1 sunsave-button-div">
-          <form action="/api/activities/{{this.id}}" method="delete" class="unsave-btn-form">
-            <input type="hidden" name="parkName" value="{{../parkName}}">
+          <form class="unsave-btn-form">
+            <input type="hidden" name="id" value="{{this.id}}">
             <button type="submit" class="btn btn-success btn-sm unsave-btn">Unsave</button>
           </form>
         </div>
@@ -34,10 +34,14 @@
     </div>
 
   </div>
+      {{/each}}
+
   {{else}}
   {{#if error}}
   {{error}}
   {{/if}}
   {{/if}}
-  {{!--
-</div> --}}
+  
+</div>
+
+ <script src="/js/savedActivities.js"></script>
