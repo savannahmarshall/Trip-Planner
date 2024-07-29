@@ -1,0 +1,82 @@
+body {
+    background-color: #296cd1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+h2 {
+    font-family: "Stylish", serif;
+    font-weight: bolder;
+    font-style: normal;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #edf431;
+    font-size: 39px;
+}
+
+.container {
+    padding: 20px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.col-md-6 {
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    max-width: 100%;
+    color: white;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-family: "Gaegu", sans-serif;
+    font-weight: bolder;
+    font-style: normal;      
+    color: #edf431;
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.btn-primary {
+    font-family: "Stylish", serif;
+    color: #405227;
+    font-weight: bolder;
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    background: linear-gradient(to top, #AD4A28, #DD723C, #FC7001, #DCB697);
+}
+
+.btn-primary:hover {
+    color: #edf431;
+    background: linear-gradient(to top, #AD4A28, #DD723C, #FC7001, #DCB697);
+}
+
+@media (max-width: 768px) {
+    .col-md-5 {
+        max-width: 100%;
+        margin: 10px 0;
+    }
+}
