@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const title = formData.get('title');
             const image = formData.get('image');
             const url = formData.get('url');
-            // const parkName = formData.get('parkName');
 
             // Send AJAX request to save the activity
             try {
@@ -36,4 +35,39 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Select all forms with the class 'delete-btn-form'
+  const deleteForms = document.querySelectorAll('.delete-btn-form');
+
+  // Loop through each form and add an event listener for the 'submit' event
+  deleteForms.forEach(form => {
+    form.addEventListener('submit', async function(event) {
+      event.preventDefault(); // Prevent the default form submission
+
+      // Get the activity ID from the form data
+      const formData = new FormData(form);
+      const activityId = formData.get('id');
+
+      // Send AJAX request to delete the activity
+      try {
+        const response = await fetch(`/api/activities/${activityId}`, {
+          method: 'DELETE',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+
+        if (response.ok) {
+          window.location.reload(); // Reload the page if the request was successful
+        } else {
+          alert('Failed to delete activity.'); // Show an alert if the request failed
+        }
+      } catch (error) {
+        console.error('Error deleting activity:', error); // Log the error to the console
+        alert('An error occurred while deleting the activity.'); // Show an alert if an error occurred
+      }
+    });
+  });
 });

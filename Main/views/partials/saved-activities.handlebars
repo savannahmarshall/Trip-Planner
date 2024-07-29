@@ -23,10 +23,10 @@
         <div class="col col-9 saved-activities-title"><a href="{{this.url}}" class="saved-activity-link" >
           {{this.title}}
         </a></div>
-        <div class="col col-1 unsave-button-div">
-          <form class="unsave-btn-form">
+        <div class="col col-1 delete-button-div">
+            <form class="delete-btn-form">
             <input type="hidden" name="id" value="{{this.id}}">
-            <button type="submit" class="btn btn-success btn-sm unsave-btn">Unsave</button>
+            <button type="submit" class="delete-btn btn btn-success btn-sm" data-activity-id="{{this.id}}">Delete</button>
           </form>
         </div>
       </div>

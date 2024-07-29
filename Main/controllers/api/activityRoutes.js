@@ -116,4 +116,23 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
+// DELETE an activity by id
+router.delete('/:id', async (req, res) => {
+  const { parkName } = req.body;
+  try {
+    await savedActivity.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+    res.status(200).json({ message: 'activity deleted successfully' });
+    // res.redirect(`/homepage?parkName=${parkName}`);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ message: 'Failed to delete activity', error: err });
+  }
+});
+
+module.exports = router;
+
 module.exports = router;
