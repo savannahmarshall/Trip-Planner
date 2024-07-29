@@ -8,18 +8,18 @@ body {
 }
 
 a {
-    text-decoration: none !important;
+    text-decoration: none;
 }
 
 /* Navbar */
 .navbar {
-    background-color: #042a2b !important;
+    background-color: #042a2b;
     color: #c5E6A6;
 }
 
 .navbar-brand, .nav-link {
     padding: 0 1%;
-    text-decoration: none !important;
+    text-decoration: none;
     color: #c5E6A6;
 }
 
@@ -56,6 +56,11 @@ a {
     font-weight: bold;
 }
 
+/* Change cursor to pointer when hovering over the search input */
+#parkName:hover {
+    cursor: pointer;
+} */
+
 .activity-item {
     align-items: center;
     background-color: #042a2b;
@@ -64,7 +69,6 @@ a {
     border: none;
     padding: 4%;
 }
-
 
 
 /* Saved Activities */
@@ -117,16 +121,17 @@ a {
     color: #C5E6A6;
 }
 
-.unsave-btn-form, .unsave-btn-div {
+.delete-btn-form, .delete-btn-div {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.unsave-btn, .login-btn, .signup-btn {
-    background-color: #899876;
-    color: #042a2b;
-    border: 0;
+.delete-button {
+    position: absolute;
+    right: -520px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 /* Media Queries */
@@ -150,7 +155,7 @@ a {
     }
 
     .activty-item span{
-margin-top:10%;
+    margin-top:10%;
     }
 
     .saved-activities-title {
@@ -167,7 +172,7 @@ margin-top:10%;
         margin: 0;
     }
 
-    .unsave-btn-form, .unsave-button-div, .saved-activity-image-div {
+    .delete-button-div, .saved-activity-image-div {
         margin: 4% 0;
     }
 
@@ -247,7 +252,6 @@ margin-top:10%;
     transform: translateY(-50%);
 }
 
-/* Custom Scrollbar */
 .activities-list {
     margin-top: 20px;
     overflow-x: hidden;
@@ -255,47 +259,6 @@ margin-top:10%;
     width: 70%;
 }
 
-.activities-list::-webkit-scrollbar {
-    width: 12px;
-}
-
-.activities-list::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-
-.activities-list::-webkit-scrollbar-thumb {
-    background: #C5E6A6;
-}
-
-.activities-list::-webkit-scrollbar-thumb:hover {
-    background: #035b5b;
-}
-
-/* login start */
-.auth-container {
-    display: flex;
-    margin: 4%;
-    text-align:center;
-  
-}
-h2{
+h2 {
     text-align: center;
 }
-
-.form-group{
-    margin: 3%; 
-    /* justify-content: center;   */
-}
-
-.login-btn, .signup-btn {
-    background-color: #042A2B;
-    color: #C5E6A6;
-    border: 0;
-}
-
-.form-group input{
-    border-radius: 10px;
-    padding: 10px;
-}
-
-/* login end */
