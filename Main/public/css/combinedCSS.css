@@ -59,17 +59,7 @@ a {
 /* Change cursor to pointer when hovering over the search input */
 #parkName:hover {
     cursor: pointer;
-} */
-
-.activity-item {
-    align-items: center;
-    background-color: #042a2b;
-    color: #c5E6A6;
-    border-radius: 20px;
-    border: none;
-    padding: 4%;
-}
-
+} 
 
 /* Saved Activities */
 #saved-activities-headline, .saved-park-headline {
@@ -129,33 +119,44 @@ a {
 
 .delete-button {
     position: absolute;
-    right: -520px;
     top: 50%;
     transform: translateY(-50%);
 }
 
 /* Media Queries */
 @media only screen and (max-width: 800px) {
-    .activity-item{
-        display: flex;
-        flex-direction: column;
+    .activity-item {
+        display: block; 
+        width: 100%; 
+        height: auto; 
+        padding: 10px;
+        margin: 10px 0; 
     }
-    
+
     .activity-item img {
-        width: 100px;
-        height: auto;
-        border-radius: 0.25rem;    
+        width: 100%;
+        max-width: 300px; 
+        height: auto; 
+        border-radius: 0.25rem; 
+        margin: 0 auto; 
+        display: block; 
     }
 
-    .activity-item .save-btn-form {
-        position: absolute;
-        /* right: 10px; */
-        top: 50%;
-        transform: translateY(-50%);
+    .activity-item .activity-content {
+        margin-top: 10px;
+        text-align: center; 
     }
 
-    .activty-item span{
-    margin-top:10%;
+    .activity-item .save-btn {
+        position: static; 
+        margin-top: 10px; 
+        right: auto; 
+        transform: none; 
+        text-align: center;
+    }
+
+    .activities-list {
+        width: 100%; 
     }
 
     .saved-activities-title {
@@ -186,15 +187,28 @@ a {
     }
 }
 
-/* Input Icon */
+/* Search */
+.search-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+/* Input icon and background*/
 .input-icon {
     position: relative;
     background-image: url('https://cdn.wallpapersafari.com/56/55/bNZJ0K.jpg');
     background-size: cover;
     background-position: center;
-    padding: 0.75rem;
+    padding: 1.5rem;
     border-radius: 0.5rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%; 
+    height: 100px; 
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
 }
 
 .input-icon input {
@@ -206,7 +220,7 @@ a {
 .input-icon .fa-search {
     color: #000;
     position: absolute;
-    right: 1.4rem;
+    right: calc(10% + 1rem);
     top: 50%;
     transform: translateY(-50%);
 }
@@ -218,45 +232,56 @@ a {
 /* Miscellaneous */
 .divider {
     border: none;
-    border-top: 3px solid #000000;
-    margin: 10px 0;
-    width: 50%;
-}
+    border-top: 3px solid transparent;
+    margin: 20px 0;
+    width: 50%; 
+    background: linear-gradient(to right, #4fbbff, #006400);
+    height: 3px;
+    }
 
+
+/* Activity List */
 .activity-item {
     background-color: #042A2B;
     color: #fff;
     border: 2px solid #C5E6A6;
     border-radius: 1rem;
-    margin: 10px 0 3px 0;
-    padding: 10px;
+    margin: 15px 0; 
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    height: 120px;
     position: relative;
+    overflow: hidden;
 }
 
+
 .activity-item img {
-    width: 100px;
+    width: 130px;
     height: auto;
-    border-radius: 0.25rem;
-    margin-right: 20px;
+    border-radius: 1rem;
+    margin-right: 40px; 
 }
+
 
 .activity-item .activity-content {
     flex-grow: 1;
 }
 
+
 .activity-item .save-btn {
     position: absolute;
-    float: right;
-    right: 30px;
+    right: 15px;
     top: 50%;
     transform: translateY(-50%);
 }
 
+
 .activities-list {
-    margin-top: 20px;
+    margin-top: 10px;
     overflow-x: hidden;
     cursor: pointer;
-    width: 70%;
+    width: 70%; /* Adjust width as needed */
 }
 
 h2 {

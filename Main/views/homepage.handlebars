@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>National Parks Activities</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    {{!-- <link rel="stylesheet" href="/css/homepage.css">
-    <link rel="stylesheet" href="/css/style.css"> --}}
-     <link rel="stylesheet" href="/css/combinedCSS.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/css/combinedCSS.css">
 </head>
 
 <body>
@@ -30,11 +29,11 @@
         {{#if activities.length}}
             <h2 class="font-weight-bold">Activities at {{parkName}}</h2>
             <div class="divider"></div>
-            <ul class="list-group activities-list">
+            <ul class="activities-list">
                 {{#each activities}}
-                    <li class="list-group-item activity-item d-flex align-items-center">
+                    <li class="activity-item">
                         <img src="{{this.image}}" alt="{{this.title}}">
-                        <span style="font-weight: bold; margin-left: 10px;">{{this.title}}</span>
+                        <span style="font-weight: bold;">{{this.title}}</span>
                         <form action="/api/activities" method="POST" class="save-btn-form">
                             <input type="hidden" name="title" value="{{this.title}}">
                             <input type="hidden" name="image" value="{{this.image}}">

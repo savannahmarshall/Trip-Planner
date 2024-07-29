@@ -1,13 +1,15 @@
 # Trip Planner
 
 ## Description
-This Node.js and Express.js application functions as a trip planner. Users are greeted with a login page where they can create a new account by providing their email and choosing a password. Once registered, users can log in and access the homepage. Here, they can search for any National Park and view a list of activities available at that park. Users can save activities for trip planning and can remove activities from the saved list as needed. This application aims to simplify the often stressful task of trip planning.
+This Node.js and Express.js application functions as a trip planner. Users are greeted with a login page where they can create a new account by providing their email and choosing a password. Once registered, users can log in and access the homepage. Here, they can search for any National Park and view a list of activities available at that park. Users can save activities for trip planning and can remove activities from the saved list as needed. The activites are sorted by park. This application aims to simplify the often stressful task of trip planning.
 
 ### Key Learnings:
 * **Interactive Full-Stack Application:** Refined skills in creating an interactive, full-stack web application using Node.js and Express.js.
-* **Handlebars Utilization:** Leveraged the Handlebars JavaScript templating library to create reusable code.
-* **Defined GET and POST Routes:** Implemented GET and POST routes to retrieve and add data.
-* **Insomnia:** Utilized Insomnia to determine API endpoints.
+* **Defined GET and POST Routes:** Implemented GET and POST routes to retrieve and add data efficiently.
+* **Insomnia:** Utilized Insomnia to identify and test API endpoints.
+* **PostgreSQL & Sequilize ORM:** Leveraged PostgreSQL and Sequelize for robust database management.
+* **MVC Structure:** Followed the Model-View-Controller (MVC) paradigm to maintain a clean and organized codebase.
+* **Handlebars.js:** Employed Handlebars.js as the template engine for dynamic HTML rendering.
 
 ### Challenges Faced:
 * **Modularization** Managing modularization was challenging due to the large number of files.
@@ -35,21 +37,22 @@ To use this application, follow these steps:
 
 2. **Install Dependencies:** Navigate to the project folder in your command-line interface and run the following command to install the necessary dependencies:
    * npm install 
+3. **Modify .env.EXAMPLE:** Update this file with your PostgreSQL username and password and ensure that the db name is db_parks.
 
-3. **Run the Application:** Start the server by typing:
+4. **Run the Application:** Start the server by typing:
    * node server.js
 
-4. **Navigate to the URL:** Open your browser and go to the following URL: http://localhost:3001/.
+5. **Navigate to the URL:** Open your browser and go to the following URL: http://localhost:3001/.
 
-5. **Create a New Account:** Create a new account by entering your email and password on the right-hand side of the login page.
+6. **Create a New Account:** Create a new account by entering your email and password on the right-hand side of the login page.
     * Your password must be more than 8 characters to be accepted.
     * Your email must follow a standard email format.
 
-6. **Login and Search for a Park:**  Log in and search for a National Park. Save activities that interest you.
+7. **Login and Search for a Park:**  Log in and search for a National Park. Save activities that interest you.
 
-7. **View/Save Activities:** Click the "Saved Activities" button to view your list of saved activities
+8. **View/Save Activities:** Click the "Saved Activities" button to view your list of saved activities, which are separated by park.
 
-8. **Delete Activites:** Use the delete button to remove activities from your saved list.
+9. **Delete Activites:** Use the delete button to remove activities from your saved list.
 
 
 **Please click [here](https://github.com/savannahmarshall/Trip-Planner) to view the GitHub repository for this application.**
@@ -72,6 +75,7 @@ To use this application, follow these steps:
 * [Render](https://dashboard.render.com/)
 * [API](https://www.nps.gov/subjects/developer/api-documentation.htm#/activities/getActivities)
 * [PostgreSQL](https://www.postgresql.org/)
+* [Sequelize](https://sequelize.org/)
 
 ## License
 This project is licensed under the [MIT License](https://opensource.org/license/MIT). 
@@ -80,9 +84,9 @@ This project is licensed under the [MIT License](https://opensource.org/license/
 No tests are required for this application.
 
 ## Questions
-Please contact us directly with any questions. Our information is below:
+Please contact us directly with any questions. Our GitHub accounts are below:
 
-[Andrea](https://github.com/dreyuhh)
-[Danielle] (https://github.com/danielleboe)
-[Savannah](https://github.com/savannahmarshall)
-[Matt](https://github.com/MattAJ26)
+[Andrea Fuentes](https://github.com/dreyuhh) <br/>
+[Danielle Boenisch](https://github.com/danielleboe) <br/>
+[Savannah Marshall](https://github.com/savannahmarshall) <br/>
+[Matt Johnson](https://github.com/MattAJ26)
