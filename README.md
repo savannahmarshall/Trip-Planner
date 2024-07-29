@@ -82,7 +82,7 @@ No tests are required for this application.
 ## Questions
 Please contact us directly with any questions. Our information is below:
 
-[Andrea](https://github.com/dreyuhh)
-[Danielle] (https://github.com/danielleboe)
-[Savannah](https://github.com/savannahmarshall)
-[Matt](https://github.com/MattAJ26)
+[Andrea](https://github.com/dreyuhh) <br/>
+[Danielle](https://github.com/danielleboe) <br/>
+[Savannah](https://github.com/savannahmarshall) <br/>
+[Matt](https://github.com/MattAJ26) <br/>
