@@ -128,23 +128,6 @@ font-size: 100%;
 font-weight: bold;
 }
 
-.unsave-btn-form {
-display: flex;
-justify-content: right;
-align-items: center;
-}
-
-.unsave-btn-div {
-display: flex;
-justify-content: center;
-align-items: center;
-}
-
-.unsave-btn {
-background-color: #198754;
-color: white;
-border: 0;
-}
 
 @media only screen and (max-width: 800px) {
   
@@ -170,15 +153,7 @@ border: 0;
 }
 
 
-
-.unsave-btn-form{
-  display: flex;
-  justify-content: center;
-  align-items: center; 
-}
-
 .saved-activities-title,
-.unsave-button-div,
 .saved-activity-image-div
 {
   margin: 4% 0;

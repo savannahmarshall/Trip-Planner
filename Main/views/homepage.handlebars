@@ -33,7 +33,7 @@
                 {{#each activities}}
                     <li class="activity-item">
                         <img src="{{this.image}}" alt="{{this.title}}">
-                        <span style="font-weight: bold;">{{this.title}}</span>
+                       <a href="{{this.url}}" style="font-weight: bold;">{{this.title}}</a>
                         <form action="/api/activities" method="POST" class="save-btn-form">
                             <input type="hidden" name="title" value="{{this.title}}">
                             <input type="hidden" name="image" value="{{this.image}}">
