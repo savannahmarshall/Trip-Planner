@@ -50,12 +50,12 @@ To use this application, follow these steps:
 
 7. **Login and Search for a Park:**  Log in and search for a National Park. Save activities that interest you.
 
-8. **View/Save Activities:** Click the "Saved Activities" button to view your list of saved activities, which are separated by park.
+8. **View/Save Activities:** Click the "Saved Activities" button to view your list of saved activities, which are separated by park at the bottom of the screen.
 
 9. **Delete Activites:** Use the delete button to remove activities from your saved list.
 
 
-**Please click [here](https://github.com/savannahmarshall/Trip-Planner) to view the GitHub repository for this application.**
+**Please click [here](https://github.com/savannahmarshall/Trip-Planner) to view the deployed application.**
 
 
 ![screenshot of login page](https://github.com/savannahmarshall/Trip-Planner/blob/main/Main/assets/login-screenshot.png)
