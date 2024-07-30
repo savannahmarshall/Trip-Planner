@@ -55,7 +55,7 @@ To use this application, follow these steps:
 9. **Delete Activites:** Use the delete button to remove activities from your saved list.
 
 
-**Please click [here](https://github.com/savannahmarshall/Trip-Planner) to view the deployed application.**
+**Please click [here](https://trip-planner-1cxc.onrender.com/login) to view the deployed application.**
 
 
 ![screenshot of login page](https://github.com/savannahmarshall/Trip-Planner/blob/main/assets/login-screenshot.png)
