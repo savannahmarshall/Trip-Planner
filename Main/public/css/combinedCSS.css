@@ -128,35 +128,42 @@ a {
     .activity-item {
         display: block; 
         width: 100%; 
-        height: auto; 
-        padding: 10px;
-        margin: 10px 0; 
+        padding: 15px; 
+        margin: 20px 0; 
+        position: relative;
+        box-sizing: border-box; 
     }
-
+    .activity-item a {
+        font-size: 10px; 
+        margin-top: 15px; 
+        text-align: center;
+    }
+    
     .activity-item img {
         width: 100%;
         max-width: 300px; 
         height: auto; 
         border-radius: 0.25rem; 
-        margin: 0 auto; 
         display: block; 
     }
-
+    
     .activity-item .activity-content {
         margin-top: 10px;
         text-align: center; 
     }
 
-    .activity-item .save-btn {
-        position: static; 
-        margin-top: 10px; 
-        right: auto; 
-        transform: none; 
-        text-align: center;
+    .activity-item .save-btn-form {
+        display: block; 
+        text-align: center; 
+        margin-top: 20px; 
+        position: absolute;
+        bottom: 20px; 
+        right: 25px;  
     }
-
-    .activities-list {
-        width: 100%; 
+    
+    .activity-item .save-btn {
+        font-size: 12px; 
+        padding: 5px 10px; 
     }
 
     .saved-activities-title {
@@ -242,9 +249,9 @@ a {
 
 /* Activity List */
 .activity-item {
+
     background-color: #042A2B;
     color: #fff;
-    border: 2px solid #C5E6A6;
     border-radius: 1rem;
     margin: 15px 0; 
     padding: 8px;
@@ -255,17 +262,27 @@ a {
     overflow: hidden;
 }
 
+.activity-item a{
+    color: #C5E6A6;
+    font-weight: bold; 
+    text-decoration: none; 
+    display: block; 
+    margin-top: 10px; 
+    text-align: center; 
+}
+
+
+.activity-item a:hover {
+    color:#006bae;
+}
+
 
 .activity-item img {
     width: 130px;
     height: auto;
     border-radius: 1rem;
     margin-right: 40px; 
-}
-
-
-.activity-item .activity-content {
-    flex-grow: 1;
+    display:block;
 }
 
 
