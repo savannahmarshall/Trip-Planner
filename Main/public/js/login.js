@@ -1,4 +1,3 @@
-document.addEventListener('DOMContentLoaded', () => {
   // Get references to the forms and their elements
   const loginForm = document.querySelector('.login-form');
   const signupForm = document.querySelector('.signup-form');
@@ -46,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const password = document.querySelector('#password-signup').value;
 
       try {
-        const response = await fetch('/signup', {
+        const response = await fetch('/api/users/signup', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -69,4 +68,3 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-});
