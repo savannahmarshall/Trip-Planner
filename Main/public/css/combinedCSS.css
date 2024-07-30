@@ -262,3 +262,13 @@ a {
 h2 {
     text-align: center;
 }
+
+footer {
+    margin-top: 25px;
+  }
+  
+  footer p {
+    line-height: .5;
+    font-size: smaller;
+  }
+  

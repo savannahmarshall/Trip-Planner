@@ -1,7 +1,8 @@
 body {
     background-color: #296cd1;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     min-height: 100vh;
     margin: 0;
@@ -80,3 +81,15 @@ label {
         margin: 10px 0;
     }
 }
+
+footer {
+    margin-top: 25px;
+     text-align: center;
+  }
+  
+  footer p {
+    line-height: .5;
+    font-size: smaller;
+    color: white;
+  }
+  
