@@ -58,11 +58,11 @@ To use this application, follow these steps:
 **Please click [here](https://github.com/savannahmarshall/Trip-Planner) to view the deployed application.**
 
 
-![screenshot of login page](https://github.com/savannahmarshall/Trip-Planner/blob/main/Main/assets/login-screenshot.png)
+![screenshot of login page](https://github.com/savannahmarshall/Trip-Planner/blob/main/assets/login-screenshot.png)
 
-![screenshot of homepage](https://github.com/savannahmarshall/Trip-Planner/blob/main/Main/assets/search-screenshot.png)
+![screenshot of homepage](https://github.com/savannahmarshall/Trip-Planner/blob/main/assets/search-screenshot.png)
 
-![screenshot of saved activites](https://github.com/savannahmarshall/Trip-Planner/blob/main/Main/assets/saved-screenshot.png)
+![screenshot of saved activites](https://github.com/savannahmarshall/Trip-Planner/blob/main/assets/saved-screenshot.png)
 
 
 
